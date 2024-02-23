@@ -1,0 +1,11 @@
+{
+  "name": "thiago-computer-database",
+  "version": "1.0.0",
+  "description": "Computer Database Test",
+  "main": "index.js",
+  "author": "Thiago Bevilacqua",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.6.6"
+  }
+}
