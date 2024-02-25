@@ -5,7 +5,8 @@ class AddComputer {
     this.introduced = '[id="introduced"]',
     this.discontinued = '[id="discontinued"]',
     this.company = '[id="company"]',
-    this.createButton = '[class="btn primary"]'
+    this.createButton = '[class="btn primary"]',
+    this.cancelButton = '[class="btn"]'
   }
 
 

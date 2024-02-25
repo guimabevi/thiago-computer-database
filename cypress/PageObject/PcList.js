@@ -1,8 +1,8 @@
 class PcList{
     constructor() {
-        this.filterField = () => cy.get('#searchbox'),
-        this.filterButton = () => cy.get('#searchsubmit'),
-        this.addPcButton = () => cy.get('#add');
+        this.filterField = '[id="searchbox"]',
+        this.filterButton = '[id="searchsubmit"]',
+        this.addPcButton = '[id="add"]',
         this.alertMessage = '[class="alert-message warning"]'
 
     }
@@ -10,7 +10,7 @@ class PcList{
 
     //method for clicking on the Add pc button
     clickAddPcbutton() {
-      return this.addPcButton().click()
+      return this.addPcButton.click()
     }
 }
 
