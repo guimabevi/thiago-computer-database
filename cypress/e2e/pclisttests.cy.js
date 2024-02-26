@@ -1,4 +1,4 @@
-import AddComputer from "../PageObject/AddComputer";
+import AddComputer from "../PageObject/ComputerPage";
 import PcList from "../PageObject/PcList";
 
 describe('Computer List Application home tests', () => {

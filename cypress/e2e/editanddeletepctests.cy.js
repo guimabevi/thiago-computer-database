@@ -1,8 +1,8 @@
-import EditComputerPage from "../PageObject/EditComputerPage";
+import ComputerPage from "../PageObject/ComputerPage";
 import PcList from "../PageObject/PcList";
 
 const pcList = new PcList()
-const editPc = new EditComputerPage()
+const editPc = new ComputerPage()
 
 describe('Computer List Application home tests', () => {
   beforeEach(() => {
@@ -13,6 +13,7 @@ describe('Computer List Application home tests', () => {
   });
 
   context(("Edit pcs tests"), () => {
+    
     it('edit pc changing the name with sucsses', () => {
      cy.get(editPc.pcname).clear()
      cy.get(editPc.pcname).type("NewPC")
@@ -24,7 +25,6 @@ describe('Computer List Application home tests', () => {
       .contains('Done ! Computer NewPC has been updated')  
     })
 
-     
     it('edit and save failure on pc with no name', () => {
       cy.get(editPc.pcname).clear()
       cy.get(editPc.saveButton)
@@ -46,7 +46,7 @@ describe('Computer List Application home tests', () => {
         cy.get(editPc.deleteButton).click({force : true})
         cy.get(pcList.alertMessage)
         .should('be.visible')
-        .contains('Done ! Computer Ace has been deleted')
+        .contains('Done ! Computer ACE has been deleted')
       })
     })
 

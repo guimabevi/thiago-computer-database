@@ -1,9 +1,9 @@
-import AddComputer from "../PageObject/AddComputer";
+import ComputerPage from "../PageObject/ComputerPage";
 import PcList from "../PageObject/PcList";
 
 describe('Add a Computer page tests', () => {
   const pcList = new PcList()
-  const addPc = new AddComputer() 
+  const addPc = new ComputerPage() 
   
   beforeEach(() => {
     cy.visit('/')
