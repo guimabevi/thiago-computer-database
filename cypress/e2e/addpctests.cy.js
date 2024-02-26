@@ -24,13 +24,13 @@ describe('Add a Computer page tests', () => {
         .should('be.visible')
   });
 
-  it('invalid data format', () => {
+  it('invalid data format should fail', () => {
     cy.createPc("ThiagoPc", "20241222", "0000000", "")
     cy.get('.error > .input > .help-inline')
         .should('be.visible')
   });
 
-  it('Discontinued data should be before introduction date', () => {
+  it('Discontinued data before the introduction date should fail', () => {
     cy.createPc("ThiagoPC", "2022-12-12", "2021-12-12", "")
     cy.get('.error > .input > .help-inline')
       .should('be.visible')

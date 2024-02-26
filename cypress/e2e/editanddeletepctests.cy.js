@@ -12,7 +12,7 @@ describe('Computer List Application home tests', () => {
   });
 
   context(("Edit pcs tests"), () => {
-    it('edit pc changing the name with sucsses', () => {
+    it('edit pc changing the name with success', () => {
      cy.get(editPc.pcname).clear()
      cy.get(editPc.pcname).type("NewPC")
      cy.get(editPc.createButton)
