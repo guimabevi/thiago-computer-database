@@ -1,6 +1,6 @@
 import ComputerPage from "../PageObject/ComputerPage";
 
-Cypress.Commands.add('createPc', (names = '', introDate, discDate) => {
+Cypress.Commands.add('createPc', (names, introDate, discDate, value) => {
     const addPc = new ComputerPage() 
     if(names !== ''){
       cy.get(addPc.pcname).type(names);
@@ -13,10 +13,11 @@ Cypress.Commands.add('createPc', (names = '', introDate, discDate) => {
     if(discDate !== ''){
       cy.get(addPc.discontinued).type(discDate)
     }
-    //cy.get(addPc.company).value(value)
-    cy.get(addPc.createButton).click()
+    if(value !== '') {
+      cy.get(addPc.company).select(value)
     }
-  )
+    cy.get(addPc.createButton).click()
+})
 
 Cypress.Commands.add('searchTable', () =>{
   cy.get('tbody tr').then(rows => {

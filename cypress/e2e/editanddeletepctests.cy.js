@@ -15,7 +15,7 @@ describe('Computer List Application home tests', () => {
     it('edit pc changing the name with sucsses', () => {
      cy.get(editPc.pcname).clear()
      cy.get(editPc.pcname).type("NewPC")
-     cy.get(editPc.saveButton)
+     cy.get(editPc.createButton)
       .should('be.visible')
       .click()
     cy.get(pcList.alertMessage)
@@ -25,7 +25,7 @@ describe('Computer List Application home tests', () => {
 
     it('edit and save failure on pc with no name', () => {
       cy.get(editPc.pcname).clear()
-      cy.get(editPc.saveButton)
+      cy.get(editPc.createButton)
         .should('be.visible')
         .click()
       cy.get('.error > .input > .help-inline')

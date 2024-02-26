@@ -12,7 +12,7 @@ describe('Add a Computer page tests', () => {
   });
 
   it('should add a new computer with all required fields filled correctly', () => {
-    cy.createPc("ThiagoPC", "2022-12-24", "2024-12-24", 1)  
+    cy.createPc("ThiagoPC", "2022-12-24", "2024-12-24", 2)  
     cy.get(pcList.alertMessage)
       .should('be.visible')
       .contains('Done ! Computer ThiagoPC has been created')
@@ -30,7 +30,7 @@ describe('Add a Computer page tests', () => {
         .should('be.visible')
   });
 
-  it.only('Discontinued data should be before introduction date', () => {
+  it('Discontinued data should be before introduction date', () => {
     cy.createPc("ThiagoPC", "2022-12-12", "2021-12-12", "")
     cy.get('.error > .input > .help-inline')
       .should('be.visible')

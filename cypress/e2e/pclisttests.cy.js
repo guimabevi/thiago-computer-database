@@ -2,7 +2,7 @@ import PcList from "../PageObject/PcList";
 
 describe('Computer List Application home tests', () => {
   const pcList = new PcList()
-  
+
   beforeEach(() => {
     cy.visit('/')
     cy.title().should('eq','Computers database')
@@ -18,7 +18,7 @@ describe('Computer List Application home tests', () => {
       cy.get(pcList.title).contains('6 computers found')
     })
 
-    it.only("Filter with null text should fail", () => {
+    it("Filter with null text should fail", () => {
       cy.get(pcList.filterField).clear()
       cy.get(pcList.filterButton)
         .should('be.visible')
