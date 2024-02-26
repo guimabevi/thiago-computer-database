@@ -4,11 +4,9 @@ class PcList{
         this.filterButton = '[id="searchsubmit"]',
         this.addPcButton = '[id="add"]',
         this.alertMessage = '[class="alert-message warning"]'
-
+        this.firstpc = 'tbody > tr:nth-child(1) > td:nth-child(1) > a'
     }
 
-
-    //method for clicking on the Add pc button
     clickAddPcbutton() {
       return this.addPcButton.click()
     }
