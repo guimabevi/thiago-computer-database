@@ -9,11 +9,9 @@ describe('Computer List Application home tests', () => {
     cy.visit('/')
     cy.title().should('eq','Computers database')
     cy.get(pcList.firstpc).click()
-
   });
 
   context(("Edit pcs tests"), () => {
-    
     it('edit pc changing the name with sucsses', () => {
      cy.get(editPc.pcname).clear()
      cy.get(editPc.pcname).type("NewPC")
@@ -41,8 +39,8 @@ describe('Computer List Application home tests', () => {
       cy.title().should('eq','Computers database')
     });
 
-    context("Delete Pc", () => {
-      it.only("Delete a pc with success",() => {
+    context('Delete Pc', () => {
+      it("Delete a pc with success",() => {
         cy.get(editPc.deleteButton).click({force : true})
         cy.get(pcList.alertMessage)
         .should('be.visible')

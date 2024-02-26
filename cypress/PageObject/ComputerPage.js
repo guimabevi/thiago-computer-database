@@ -5,7 +5,7 @@ class ComputerPage {
     this.discontinued = '[id="discontinued"]',
     this.company = '[id="company"]',
     this.createButton = '[class="btn primary"]',
-    this.cancelButton = '[class="btn"]'
+    this.cancelButton = '[class="btn"]',
     this.deleteButton = '[value="Delete this computer"]'
   }
 }
