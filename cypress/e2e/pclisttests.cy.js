@@ -1,4 +1,3 @@
-import AddComputer from "../PageObject/ComputerPage";
 import PcList from "../PageObject/PcList";
 
 describe('Computer List Application home tests', () => {
@@ -10,24 +9,31 @@ describe('Computer List Application home tests', () => {
   });
 
   context("Filtering tests", () => {
-    it.only('Filter pc name', () => {
-      cy.get(pcList.filterField).type("Ace")
+    it('Filter pc name', () => {
+      cy.get(pcList.filterField).type("ace")
       cy.get(pcList.filterButton)
         .should('be.visible')
         .click()
-      cy.get('tbody tr').then(rows => {
-          // Loop through each row
-          for (let i = 1; i <= rows.length; i++) {
-            cy.get(`tbody tr:nth-child(${i}) td:nth-child(1)`).invoke('text').then(text => {
-              expect(text.trim().toLowerCase()).to.include('ace');
-            });
-          }
-        })
-
-      })
-      
+      cy.searchTable()
+      cy.get(pcList.title).contains('6 computers found')
     })
-  })
+
+    it.only("Filter with null text should fail", () => {
+      cy.get(pcList.filterField).clear()
+      cy.get(pcList.filterButton)
+        .should('be.visible')
+        .click()
+      cy.get(pcList.filterField)
+        .invoke('prop', 'validationMessage')
+        .should((text) => {
+          expect(
+            'Preencha este campo.'
+          ).to.eq(text)
+        })
+      cy.get(pcList.title).contains('574 computers found')
+    })
+ })
+})
   
 
 

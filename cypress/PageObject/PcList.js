@@ -1,5 +1,6 @@
 class PcList{
     constructor() {
+        this.title = '#main > h1'
         this.filterField = '[id="searchbox"]',
         this.filterButton = '[id="searchsubmit"]',
         this.addPcButton = '[id="add"]',
